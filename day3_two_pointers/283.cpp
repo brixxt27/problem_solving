@@ -1,6 +1,23 @@
 #include "../utils.hpp"
 
 class Solution {
+public:
+    void moveZeroes(std::vector<int>& nums) {
+		int	j = 0;
+
+		for (int i = 0; i < nums.size(); i++)
+		{
+			if (nums[i] != 0)
+			{
+				std::swap(nums[i], nums[j]);
+				j++;
+			}
+		}
+	}
+};
+
+/*
+class Solution {
 private:
 	int	get_non_zero_from_back(std::vector<int>& nums, int front, int back)
 	{
@@ -58,8 +75,7 @@ public:
     	}
     }
 };
-
-
+*/
 
 int	main()
 {
@@ -67,10 +83,14 @@ int	main()
 	std::vector<int>	v;
 
 	v.push_back(0);
-	//v.push_back(1);
+	v.push_back(1);
 	v.push_back(0);
-	//v.push_back(3);
-	//v.push_back(12);
+	v.push_back(3);
+	v.push_back(12);
+	v.push_back(4);
+	v.push_back(0);
+	v.push_back(0);
+	v.push_back(2);
 	sol.moveZeroes(v);
 	printData(v);
 }
